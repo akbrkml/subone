@@ -5,7 +5,7 @@ $fullname = $_POST['fullname'];
 $job      = $_POST['job'];
 $date     = date("Y-m-d");
 
-$sql = "INSERT INTO Persons(FullName,Job,DateDesc) VALUES (?, ?)";
+$sql = "INSERT INTO Persons(FullName,Job,DateDesc) VALUES (?, ?, ?)";
 $params = array('$fullname','$job','$date');
 
 $stmt = sqlsrv_query($conn, $sql, $params);
