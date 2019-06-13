@@ -5,16 +5,8 @@ $fullname = $_POST['fullname'];
 $job      = $_POST['job'];
 $date     = date("Y-m-d");
 
-$sql = "INSERT INTO Persons(FullName,Job,DateDesc) VALUES (?, ?, ?)";
-$params = array('$fullname','$job','$date');
-
-$stmt = sqlsrv_query($conn, $sql, $params);
-
-if( $stmt === false ) {
-    die( print_r( sqlsrv_errors(), true));
-} else {
-    echo "Record add successfully";
-}
+$conn->exec("INSERT INTO [dbo].[Persons] (FullName,Job,DateDesc) 
+VALUES ('$fullname','$job','$date')");
 
 header('location:index.php');
 ?>
