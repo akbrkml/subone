@@ -12,10 +12,6 @@ echo "
     <td><b><center>Date</td>
 </tr>";
 
-try {
-    // $conn = new PDO("sqlsrv:server = tcp:sub-one.database.windows.net,1433; Database = subdb", "badrun", "Adele213");
-    // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     $sql_select = "SELECT * FROM [dbo].[Persons]";
     $stmt = $conn->query($sql_select);
     $getResults = $stmt->fetchAll(); 
@@ -32,11 +28,5 @@ try {
         </tr>";
         $number++;
     }
-}
-catch (PDOException $e) {
-    print("Error connecting to SQL Server.");
-    die(print_r($e));
-}
-
 
 ?>
