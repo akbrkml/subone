@@ -4,12 +4,28 @@ include "connection.php";
 include "form.php";
 
 echo "
-<table border=0>
+<style>
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 15px;
+}
+</style>
+
+<table>
 <tr>
     <td><b>No</td>
-    <td width=250><b>Full Name</td>
-    <td width=200><b>Job</td>
-    <td width=100><b>Date</td>
+    <td>Full Name</td>
+    <td>Job</td>
+    <td>Date</td>
 </tr>";
 
     $sql_select = "SELECT * FROM [dbo].[Persons]";
