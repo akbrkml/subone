@@ -1,6 +1,6 @@
 <?php
     $connectionInfo = array(
-        "UID" => "badrun@sub-one", 
+        "UID" => "badrun", 
         "pwd" => "Adele213", 
         "Database" => "subdb"
     );
