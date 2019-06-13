@@ -12,20 +12,30 @@ echo "
     <td><b><center>Date</td>
 </tr>";
 
-$tsql = "SELECT * FROM dbo.Persons";
-$getResults = sqlsrv_query($conn, $tsql);
+try {
+    $conn = new PDO("sqlsrv:server = tcp:sub-one.database.windows.net,1433; Database = subdb", "badrun", "Adele213");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$number = 1;
+    $tsql = "SELECT * FROM dbo.Persons";
+    $getResults = sqlsrv_query($conn, $tsql);
 
-while($var = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)){
-    echo "
-    <tr>
-        <td>$number</td>
-        <td>$var[FullName]</td>
-        <td>$var[Job]</td>
-        <td>$var[DateDesc]</td>
-    </tr>";
-    $number++;
+    $number = 1;
+
+    while($var = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)){
+        echo "
+        <tr>
+            <td>$number</td>
+            <td>$var[FullName]</td>
+            <td>$var[Job]</td>
+            <td>$var[DateDesc]</td>
+        </tr>";
+        $number++;
+    }
 }
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
+
 
 ?>
