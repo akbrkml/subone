@@ -2,10 +2,7 @@
     $connectionInfo = array(
         "UID" => "badrun@sub-one", 
         "pwd" => "Adele213", 
-        "Database" => "subdb", 
-        "LoginTimeout" => 30, 
-        "Encrypt" => 1, 
-        "TrustServerCertificate" => 0
+        "Database" => "subdb"
     );
     $serverName = "tcp:sub-one.database.windows.net,1433";
     
