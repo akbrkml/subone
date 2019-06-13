@@ -1,9 +1,9 @@
 <?php
     $serverName = "sub-one.database.windows.net";
     $connectionInfo = array(
-        "UID" => "badrun", 
-        "pwd" => "Adele213", 
-        "Database" => "subdb"
+        "Database" => "subdb", 
+        "UID" => "badrun",
+        "pwd" => "Adele213"
     );
     
     $conn = sqlsrv_connect($serverName, $connectionInfo);
