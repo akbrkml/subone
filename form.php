@@ -8,11 +8,11 @@
         <table>
             <tr>
                 <td>Full Name</td>
-                <td>: <input type="text" name="fullname" size="100"></td>
+                <td>: <input type="text" name="fullname" size="50"></td>
             </tr>
             <tr>
                 <td>Job</td>
-                <td>: <input type="text" name="job" size="100"></td>
+                <td>: <input type="text" name="job" size="50"></td>
             </tr>
             <tr>
                 <td colspan=2><input type="submit" value="Send"></td>
