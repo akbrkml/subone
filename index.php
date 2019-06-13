@@ -12,7 +12,7 @@ echo "
     <td><b><center>Date</td>
 </tr>";
 
-$tsql = "SELECT * FROM Persons";
+$tsql = "SELECT * FROM dbo.Persons";
 $getResults = sqlsrv_query($conn, $tsql);
 
 $number = 1;
