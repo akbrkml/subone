@@ -16,12 +16,13 @@ try {
     $conn = new PDO("sqlsrv:server = tcp:sub-one.database.windows.net,1433; Database = subdb", "badrun", "Adele213");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $tsql = "SELECT * FROM dbo.Persons";
-    $getResults = sqlsrv_query($conn, $tsql);
+    $sql_select = "SELECT * FROM [dbo].[Persons]";
+    $stmt = $conn->query($sql_select);
+    $getResults = $stmt->fetchAll(); 
 
     $number = 1;
 
-    while($var = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)){
+    foreach($getResults as $var){
         echo "
         <tr>
             <td>$number</td>
