@@ -4,7 +4,7 @@
         "pwd" => "Adele213", 
         "Database" => "subdb"
     );
-    $serverName = "tcp:sub-one.database.windows.net,1433";
+    $serverName = "sub-one.database.windows.net";
     
     $conn = sqlsrv_connect($serverName, $connectionInfo);
     //Establishes the connection
