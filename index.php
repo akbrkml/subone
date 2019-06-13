@@ -4,11 +4,11 @@ include "connection.php";
 include "form.php";
 
 echo "
-<table border=1>
+<table border=0>
 <tr>
     <td><b>No</td>
-    <td width=400><b>Full Name</td>
-    <td width=300><b>Job</td>
+    <td width=250><b>Full Name</td>
+    <td width=200><b>Job</td>
     <td width=100><b>Date</td>
 </tr>";
 
